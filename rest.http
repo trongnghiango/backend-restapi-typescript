@@ -1,0 +1,48 @@
+
+### phongbd
+POST /v1/signup/basic 
+Host: localhost:3000
+x-api-key: GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj 
+Content-Type: application/json
+
+{
+    "name" : "Phong Bo Do",
+    "email": "phong.bd@gmail.com",
+    "password": "changeit",
+    "profilePicUrl": "https://funpoultry.com/wp-content/uploads/2020/12/cohin-white-rooster.jpg"
+}
+
+###
+POST /v1/signup/basic 
+Host: localhost:3000
+x-api-key: GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj 
+Content-Type: application/json
+
+{
+    "name" : "Nghia DT",
+    "email": "nghiadt@gmail.com",
+    "password": "changeit",
+    "profilePicUrl": "https://avatars.githubusercontent.com/u/108252345?v=4"
+}
+
+
+### Signin
+POST /v1/login/basic
+Host: localhost:3000
+x-api-key: GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj 
+Content-Type: application/json
+
+{
+  "email": "nghiadt@gmail.com",
+  "password": "changeit"
+}
+
+###
+
+GET /v1/profile/my
+Host: localhost:3000
+x-api-key: GCMUDiuY5a7WvyUNt9n3QztToSHzK7Uj
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZnRlcmFjYWRlbXkuY29tIiwiYXVkIjoiYWZ0ZXJhY2FkZW15LmNvbSIsInN1YiI6IjYzMDRlOTU1ZDI4OGNjMmFjNGUzNGQxOSIsImlhdCI6MTY2MTI2NjM1NSwiZXhwIjoxNjYzODU4MzU1LCJwcm0iOiI1NzE0YjAyYTUzNDM4MzcxNWUyNGJlMmI4ZGFiNWY5NDc5YTVmYzg3ZTUyYTgyOWFkYzQyZGM0MjBiZGM3NmE3OTBmZGQ2N2RjN2VjMGE3NThmYWE2YTI0YmUyZWY1ZDA5NTVmMGJlYThhOWJkYWFkMTBlZGQzZDZjYTg2YTQwZCJ9.WDokyPM6LyG5v0Y3OyadUNp683Bvy6LsWBz5BCI9wgsujMJSbxM_q8Hgc99S85_R3g6Z1r5R2A8BzJ_FsSKH1w
+
+### api-key

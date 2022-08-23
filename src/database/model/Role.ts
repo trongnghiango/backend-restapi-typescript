@@ -4,6 +4,8 @@ export const DOCUMENT_NAME = 'Role';
 export const COLLECTION_NAME = 'roles';
 
 export const enum RoleCode {
+  CUSTOMER = 'CUSTOMER',
+  PATIENT = 'PATIENT',
   LEARNER = 'LEARNER',
   WRITER = 'WRITER',
   EDITOR = 'EDITOR',

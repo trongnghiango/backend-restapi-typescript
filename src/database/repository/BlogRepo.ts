@@ -13,7 +13,7 @@ export default class BlogRepo {
     blog.createdAt = now;
     blog.updatedAt = now;
     const createdBlog = await BlogModel.create(blog);
-    return createdBlog.toObject();
+    return createdBlog;
   }
 
   public static update(blog: Blog): Promise<any> {
@@ -76,7 +76,7 @@ export default class BlogRepo {
       .limit(limit)
       .populate('author', this.AUTHOR_DETAIL)
       .sort({ updatedAt: -1 })
-      .lean<Blog>()
+      .lean<Blog[]>()
       .exec();
   }
 
@@ -84,7 +84,7 @@ export default class BlogRepo {
     return BlogModel.find({ author: user, status: true, isPublished: true })
       .populate('author', this.AUTHOR_DETAIL)
       .sort({ updatedAt: -1 })
-      .lean<Blog>()
+      .lean<Blog[]>()
       .exec();
   }
 
@@ -119,7 +119,7 @@ export default class BlogRepo {
       .populate('createdBy', this.AUTHOR_DETAIL)
       .populate('updatedBy', this.AUTHOR_DETAIL)
       .sort({ updatedAt: -1 })
-      .lean<Blog>()
+      .lean<Blog[]>()
       .exec();
   }
 
@@ -129,7 +129,7 @@ export default class BlogRepo {
       .limit(limit)
       .populate('author', this.AUTHOR_DETAIL)
       .sort({ publishedAt: -1 })
-      .lean<Blog>()
+      .lean<Blog[]>()
       .exec();
   }
 
@@ -149,7 +149,7 @@ export default class BlogRepo {
       .sort({ updatedAt: -1 })
       .limit(limit)
       .sort({ similarity: { $meta: 'textScore' } })
-      .lean<Blog>()
+      .lean<Blog[]>()
       .exec();
   }
 
@@ -167,7 +167,7 @@ export default class BlogRepo {
       .select('-status -description')
       .limit(limit)
       .sort({ similarity: { $meta: 'textScore' } })
-      .lean<Blog>()
+      .lean<Blog[]>()
       .exec();
   }
 
@@ -180,7 +180,7 @@ export default class BlogRepo {
       .select('-status -description')
       .limit(limit)
       .sort({ score: -1 })
-      .lean<Blog>()
+      .lean<Blog[]>()
       .exec();
   }
 }

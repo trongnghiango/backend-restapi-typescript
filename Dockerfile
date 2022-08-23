@@ -1,5 +1,5 @@
 # Here we are getting our node as Base image
-FROM node:14
+FROM node:lts-gallium
 
 # create user in the docker image
 USER node
@@ -14,10 +14,10 @@ WORKDIR /home/node/app
 COPY --chown=node:node . .
 
 # installing the dependencies into the container
-RUN npm install
+RUN yarn
 
 # container exposed network port number
 EXPOSE 3000
 
 # command to run within the container
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
